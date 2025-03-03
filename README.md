@@ -43,11 +43,11 @@ This Processing sketch generates composite glyphs for numbers using a custom run
 
 1. **Requirements:**  
    - [Processing (Java mode)](https://processing.org/download/)
-   - Git (for repository management)
+   - Python 3
 
 2. **Installation:**  
    - Clone this repository to your local machine.
-   - Open the `.pde` file in the Processing IDE.
+   - Load the `.java` file in the Processing IDE.
 
 3. **Configuration:**  
    - Modify the `minNumber` and `maxNumber` variables in the code to change the range (currently set to **0–9999**).
