@@ -125,7 +125,7 @@ In addition to generating individual composite glyph images from Processing, two
   This prevents any changes in composite image dimensions across frames.
   
 - **Use Case:**  
-  Use this option if you prefer cumulative effect of each digit placement which can be easier to observe the scale of the number being represetned. However, it is not as concise and requires more digits.
+  Use this option if you prefer cumulative effect of each digit placement which can be easier to observe the scale of the number being represented. However, it is not as concise and requires more digits.
 
 ### How to Create the Video
 
