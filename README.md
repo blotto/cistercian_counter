@@ -62,7 +62,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-*Your Name* - [Your GitHub Profile](https://github.com/yourusername)
+*Your Name* - [Your GitHub Profile](https://github.com/blotto)
 
 ## Acknowledgments
 
