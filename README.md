@@ -56,7 +56,7 @@ This Processing sketch generates composite glyphs for numbers using a custom run
    - Adjust the `initSegments()` function to tweak the appearance of each segment.
    - Modify quadrant transformations in `drawCompositeGlyph()` to change how digits are flipped and positioned.
   
-   ## Video Creation Options
+## Video Creation Options
 
 In addition to generating individual composite glyph images from Processing, two options are provided via a Python script for creating a video from these images using ffmpeg.
 
