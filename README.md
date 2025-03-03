@@ -70,27 +70,62 @@ In addition to generating individual composite glyph images from Processing, two
 ### Option 1: Standard Base-10,000 Conversion
 
 - **Logic:**  
-  Each composite glyph is constructed by converting the frame number to a series of runic digits using standard base-10,000 arithmetic.  
-  - For example, frame **10,000** would be represented as `[1, 0]`, meaning the rightmost (least-significant) digit cycles normally from 0 to 9999.
+  Each composite glyph is constructed by converting the frame number to a series of runic digits using standard base-10,000 arithmetic.  In the standard base‑10,000 conversion method, each composite glyph is formed by converting the frame number into a sequence of runic digits, where each digit ranges from 0 to 9999. The rightmost (least-significant) digit cycles normally through 0–9999. For example:
+
+- **Frame 10,000:**  
+  Represented as `[1, 0]` (i.e., 1 × 10,000 + 0).
+
+- **Frame 15,000:**  
+  Represented as `[1, 5000]` (i.e., 1 × 10,000 + 5000).
+
+- **Frame 30,578:**  
+  Represented as `[3, 578]` (i.e., 3 × 10,000 + 578).
+
+- **Frame 68,983:**  
+  Represented as `[6, 8983]` (i.e., 6 × 10,000 + 8983).
   
 - **Behavior:**  
   The least-significant digit (LSB) cycles normally (i.e. it resets to 0 after 9999), and additional digits are added to the left as needed.
   
 - **Use Case:**  
-  This option is useful if you prefer a traditional numeral system behavior where every digit has its full cycle.
+  This option is useful if you prefer a traditional numeral system behavior where every digit has its full cycle. It is also much more concise and gives a higher range with fewer digits.
 
 ### Option 2: Saturated (Clamped) Conversion
 
 - **Logic:**  
-  Alternatively, a "saturated" conversion option is available. In this system, each runic digit can only represent values from 0 to 9999. When the frame number exceeds 9999, the least-significant digit is clamped at **9999**, and the overflow is carried to a new digit on the left.  
-  - For example, frame **10,000** becomes `[1, 9999]`, so the LSB stays at 9999, and frame **10,001** becomes `[2, 9999]`.
+  Alternatively, a "saturated" conversion option is available. In this system, each runic digit can only represent values from 0 to 9999. When the frame number exceeds 9999, the least-significant digit is clamped at **9999**, and the overflow is carried to a new digit on the left. 
+ 
+- **Frame 10,000:**  
+  Calculation: 10,000 − 9,999 = 1  
+  Representation: `[1, 9999]`
+
+- **Frame 15,000:**  
+  Calculation: 15,000 − 9,999 = 5001  
+  Representation: `[5001, 9999]`
+
+- **Frame 30,578:**  
+  Calculation:  
+  1. 30,578 − 9,999 = 20,579  
+  2. 20,579 − 9,999 = 10,580  
+  3. 10,580 − 9,999 = 581  
+  Representation: `[581, 9999, 9999, 9999]`
+
+- **Frame 68,983:**  
+  Calculation:  
+  1. 68,983 − 9,999 = 58,984  
+  2. 58,984 − 9,999 = 48,985  
+  3. 48,985 − 9,999 = 38,986  
+  4. 38,986 − 9,999 = 28,987  
+  5. 28,987 − 9,999 = 18,988  
+  6. 18,988 − 9,999 = 899  
+  Representation: `[899, 9999, 9999, 9999, 9999, 9999, 9999]`
   
 - **Behavior:**  
   This method ensures that the rightmost runic symbol is always fixed at its maximum value (9999) once an overflow occurs. The layout remains constant, as unused (placeholder) positions are rendered with the runic zero.  
   This prevents any changes in composite image dimensions across frames.
   
 - **Use Case:**  
-  Use this option if you want a fixed layout in your video where the number of runic digits never changes, even when the frame count exceeds 9999.
+  Use this option if you prefer cumulative effect of each digit placement which can be easier to observe the scale of the number being represetned. However, it is not as concise and requires more digits.
 
 ### How to Create the Video
 
