@@ -32,6 +32,13 @@ This Processing sketch generates composite glyphs for numbers using a custom run
 - **High Resolution Option:**  
   Increase pixel density (e.g., using `pixelDensity(displayDensity())`) to smooth out diagonal segments if needed.
 
+## Sample Images
+
+![the number ten](num_0010.png "10")
+![the number 263](num_0263.png "263")
+![the number 4729](num_4729.png "4729")
+![the number 8773](num_8773.png "8773")
+
 ## Setup and Usage
 
 1. **Requirements:**  
