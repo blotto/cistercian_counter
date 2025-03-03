@@ -127,3 +127,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Inspired from this [reddit post](https://www.reddit.com/r/coolguides/comments/wscf8f/cool_guide_to_cistercian_numerals/) and this [article](https://www.zmescience.com/feature-post/natural-sciences/mathematics/cirstercian-numbers-90432432/)
 - Inspiration from digital clock displays and custom numeral systems.
 - The Processing community for their extensive documentation and support.
+- Use of ChatGPT o3-mini-high
+
+
