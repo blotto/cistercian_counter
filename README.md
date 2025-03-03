@@ -66,5 +66,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgments
 
+- Inspired from this [reddit post](https://www.reddit.com/r/coolguides/comments/wscf8f/cool_guide_to_cistercian_numerals/) 
 - Inspiration from digital clock displays and custom numeral systems.
 - The Processing community for their extensive documentation and support.
